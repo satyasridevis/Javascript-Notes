@@ -136,13 +136,14 @@ img
   #maindoc #javascript-basics h1, h2, h3, h4
   {
      font-size: 3rem;
-     
+     margin:1rem;
      
   }
 
   #maindoc p, code
   {
-    font-size: 3em;
+    font-size: 4rem;
+    margin: 1rem;
     
     
   }
