@@ -74,7 +74,7 @@ header h1
 #maindoc p
 {
   
-  font-size: 17 px;
+  font-size: 1rem;
   line-height: 1.6;
   font-weight: 200;
   text-align: justify;
@@ -122,8 +122,17 @@ img
   {
     width: 98%;
     margin: auto;
+
     
   }
+  #maindoc p
+  {
+    font-size: 1.2rem;
+  }
+
+
+
+
 }
 
   
