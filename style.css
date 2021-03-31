@@ -15,31 +15,71 @@ header
   text-decoration:underline;
 }
 
+header h1
+{
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1.4px;
+}
+
+.top-list ul a
+{
+  
+  list-style: none;
+  text-decoration: none;
+  padding: 1rem;
+  color:black;
+  text-decoration: underline;
+ 
+  
+}
+
+.top-list ul 
+{ 
+  margin-left: 5rem;
+  
+  width: 50%;
+  font-size: 1.2rem;
+}
+
 
 #maindoc
 {
-  width: 100%;
+  width: 95%;
   height: 100%;
+  margin: auto;
 
   background: #fff;
   font-family: Arial,x-locale-body,sans-serif;
   
+  
 }
-#maindoc h1, h2, h3
+#maindoc h1, h2, h3, h4
 {
-  font-size: 1.4rem;
+  
   padding: 1.2rem;
   text-decoration: underline;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1.4px;
+  margin-left: 3.5rem;
+  margin-right: 1rem;
 }
+
+#maindoc h2
+{
+  text-align: center;
+}
+
+
 
 #maindoc p
 {
-  margin-left: 2.5rem;
-  margin-right: 1rem;
+  
   font-size: 17 px;
-  line-height: 1.4;
+  line-height: 1.6;
   font-weight: 200;
   text-align: justify;
+  margin-left: 5rem;
+  margin-right: 15rem;
 }
 code
 {
@@ -49,16 +89,17 @@ code
   word-break: normal;
   word-wrap: normal;
   line-height: 2;
-  padding: 10px;
-  margin: 3rem;
+  padding: 5px;
+  margin: 5rem;
   background-color: #d0d0d5;
   text-align: left;
   font-size: 1.2rem;
+  width: 75%;
 
 
 
 }
-#maindoc ul
+#maindoc #javascript-basics ul
 {
   margin-left: 6em;
   line-height: 2em;
@@ -71,9 +112,32 @@ span
 img
 {
   margin-left: 4rem;
+  padding: 1rem
 }
-.javascriptarray1
+
+
+@media (min-width:576px)
 {
-height: 400px;
-width:300px;
+  #maindoc , #javascript-basics
+  {
+    width: 100%;
+    
+  }
+
+  .top-list ul 
+  {
+    font-size: 1.5rem;
+  }
+
+
+
+  #maindoc #javascript-basics h1, h2, h3, h4
+  {
+     font-size: 2rem;
+  }
+
+  #maindoc p, code
+  {
+    font-size: 2em;
+  }
 }

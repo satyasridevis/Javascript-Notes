@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>JavaScript Notes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     
   </head>
   <body>
@@ -12,31 +14,43 @@
 <header><h1>JAVASCRIPT NOTES</h1></header>
     
   <section id="maindoc">
-    <section>
-      <h2> JavaScript Basics</h2>
-      <section>
-         
-           <p>JavaScript is a high-level programming language that all modern web browsers support. It is also one of the core technologies of the web
-            JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.
-             </p>
+    <div class="top-list">
+      <ul>
+        <a href="#javascript-basics"><li>Javascript Basics</li></a>
+        <a href=""><li>ES6 Features</li></a> 
+        <a href=""><li>Regular Expressions</li></a> 
+        <a href=""><li>Debugging</li></a>
+        <a href=""><li>Basic Data Structures</li></a>
+        <a href=""><li>Basic Algorithm Scripting</li></a>
+        <a href=""><li>Object oriented programming</li></a>
+        <a href=""><li>Functional Programming</li></a>
+        <a href=""><li>Intermiate Algorithm scripting</li></a>
+        <a href=""><li></li></a>
+      </ul>
+    </div>
+        <section id="javascript-basics">
+          <h2> Javascript Basics</h2>
+         <p>JavaScript is a high-level programming language that all modern web browsers support. It is also one of the core technologies of the web
+         JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.</p>
+
 
 
 
           <!-- comment your JavaScript  code-->
   
-         <h2>Comment your JavaScript Code</h2>
+         <h3>Comment your Javascript Code</h3>
 
         <p> There are two ways to write comments in JavaScript</p>
         <code>// - single line comment</code>
         <code> // this is an inline comment </code>
         <code>/* */ - multi-line comment</code>
         <code>/* This is  a multi-line comment</code>
-      </section>
+      
       
   
 <!-- Declaring JavaScript variables -->
-<section id="VariablesandOperators">
-    <h2>Declare JavaScript Variables </h2>
+
+    <h3>Declare JavaScript Variables </h3>
     <p> Number of datatypes :</p>
         <ul>
           <li>Undefined</li>
@@ -48,50 +62,46 @@
           <li>Number</li>
           <li>Object</li>
         </ul>
-        <p>to create or declare a variable by putting the keyword <strong>var</strong><br> Example:</p>
+             <p>to create or declare a variable by putting the keyword <strong>var</strong><br> Example:</p>
              <code> var myname; </code>
              <p>Variable names can be made up of numbers, letters, and $ or _, but may not contain spaces or start with a number.</p>
-            <p> storing values with the assignment operator</p>
-            <code>
-            var myvar;
-
-            myvar = 10;
-              </code>
+             <p> storing values with the assignment operator</p>
+             <code>
+             var myvar;
+             myvar = 10;
+            </code>
       <h3>Assigning the Value of One Variable to Another</h3>
             <code>
               var myVar;
-
               myVar = 5;
-
               var myNum;
+              yNum = myVar;
+            </code>
 
-             myNum = myVar;
-</code>
+     <h3>Initializing Variables with the Assignment Operator</h3>
+     <code> var myVar = 0;</code>
+     <p>Understanding Uninitialized Variables <br>
+     When JavaScript variables are declared, they have an initial value of undefined. If you do a mathematical operation on an undefined variable your result will be NaN which means "Not a Number". If you concatenate a string with an undefined variable, you will get a literal string of "undefined".
+     </p>
 
-<h3>Initializing Variables with the Assignment Operator</h3>
-<code> var myVar = 0;</code>
-<p>Understanding Uninitialized Variables <br>
-  When JavaScript variables are declared, they have an initial value of undefined. If you do a mathematical operation on an undefined variable your result will be NaN which means "Not a Number". If you concatenate a string with an undefined variable, you will get a literal string of "undefined".
- </p>
-
-<p> Increment operator</p>
-<code>
-  i++;
-  i=i+1;
-</code>
-<p> Decrement operator</p>
-<code>
-  i--;
-  i=i-1;
-</code>
-<p>decimal number</p>
-<code>var ourDecimal = 5.7;</code>
-<p>Change the 0.0 so that quotient will equal to 2.2.</p>
-<code>var quotient = 4.4 / 2.0;</code>
-<p>Change the 0.0 so that product will equal 5.0.</p>
-<code>var product = 2.0 * 2.5;</code>
-<p>Finding a Remainder in JavaScript
-The remainder operator % gives the remainder of the division of two numbers.
+     <p>Increment operator</p>
+     <code>
+       i++;
+       i=i+1;
+     </code>
+     <p>Decrement operator</p>
+     <code>
+      i--;
+      i=i-1;
+     </code>
+     <p>decimal number</p>
+    <code>var ourDecimal = 5.7;</code>
+    <p>Change the 0.0 so that quotient will equal to 2.2.</p>
+    <code>var quotient = 4.4 / 2.0;</code>
+    <p>Change the 0.0 so that product will equal 5.0.</p>
+    <code>var product = 2.0 * 2.5;</code>
+    <p>Finding a Remainder in JavaScript
+      The remainder operator % gives the remainder of the division of two numbers.
 
 </p>
 
@@ -125,10 +135,10 @@ b -= 9; // Augmented subtraction
 c *= 3; // Augmented multiplication
 d /=29; // Augmented division
 </code>
-</section><!-- JavaScript Variable section close-->
+
 <!-- Strings Declaration -->
-<section id= "string">
-<h2> Strings </h2>
+
+<h3> Strings </h3>
 <code> var myName = "your name";</code>
 <p> "your name" is called a string literal</p>
 
@@ -183,7 +193,7 @@ Build myStr from the strings "This is the start. " and "This is the end." using 
 <code>
 var myStr="This is the start. " + "This is the end.";// This is the start. This is the end.
 </code>
-<p>Concatenating Strings with the Plus Equals Operator</p>
+<h4>Concatenating Strings with the Plus Equals Operator</h4>
 
 <code>
   var ourStr = "I come first. ";
@@ -191,7 +201,7 @@ var myStr="This is the start. " + "This is the end.";// This is the start. This 
   // ourStr is now "I come first. I come second."
 </code>
 
-<p>Constructing Strings with Variables</p>
+<h4>Constructing Strings with Variables</h4>
 <code>
   var ourName = "freeCodeCamp";
   var ourStr = "Hello, our name is " + ourName + ", how are you?";
@@ -207,7 +217,7 @@ Set myName to a string equal to your name and build myStr with myName between th
   var myStr = "My name is " + myName + " and I am well!";
   // My name is satya sridevi and I am well!
 </code>
-<p>Appending Variables to Strings</p>
+<h4>Appending Variables to Strings</h4>
 <code>
   var anAdjective = "awesome!";
   var ourStr = "freeCodeCamp is ";
@@ -215,7 +225,7 @@ Set myName to a string equal to your name and build myStr with myName between th
   // ourStr is now "freeCodeCamp is awesome!"
 </code>
 
-<p>Challenge: Set someAdjective and append it to myStr using the += operator</p>
+<h4>Challenge: Set someAdjective and append it to myStr using the += operator</h4>
 <code>
   var someAdjective ="awesome";
   var myStr = "Learning to code is ";
@@ -253,7 +263,7 @@ var firstLetter = firstName[0]; // firstLetter is "C"
   console.log(firstLetterOfLastName);// The Output is L
 </code>
 
-<p> Understand String Immutability</p>
+<h4> Understand String Immutability</h4>
 <p>In JavaScript, String values are immutable, which means that they cannot be altered once created.this does not mean that myStr cannot be changed, just that the individual characters of a string literal cannot be changed. The only way to change myStr would be to assign it with a new string</p>
 <p>Challenge: Correct the assignment to myStr so it contains the string value of Hello World</p>
 <code>
@@ -264,7 +274,7 @@ var firstLetter = firstName[0]; // firstLetter is "C"
   console.log(myStr); //The output is Hello World
 
 </code>
-<p>Use Bracket Notation to Find the Nth Character in a String</p>
+<h4>Use Bracket Notation to Find the Nth Character in a String</h4>
 
 <p>Challenge: Let's try to set thirdLetterOfLastName to equal the third letter of the lastName variable using bracket notation.</p>
 <code>
@@ -295,14 +305,17 @@ In order to get the last letter of a string, you can subtract one from the strin
 </code>
 
 
-<p>Word Blanks  <br>
-  In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
+<h4>Word Blanks</h4>
+   <p>
+    In this challenge, we provide you with a noun, a verb, an adjective and an adverb. You need to form a complete sentence using words of your choice, along with the words we provide.
 
-  You will need to use the string concatenation operator + to build a new string, using the provided variables: myNoun, myAdjective, myVerb, and myAdverb. You will then assign the formed string to the wordBlanks variable. You should not change the words assigned to the variables.
+    You will need to use the string concatenation operator + to build a new string, using the provided variables: myNoun, myAdjective, myVerb, and myAdverb. You will then assign the formed string to the wordBlanks variable. You should not change the words assigned to the variables.
+  
+    You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
+   </p>
+   
 
-  You will also need to account for spaces in your string, so that the final sentence has spaces between all the words. The result should be a complete sentence.
 
-</p>
 
 <code>
   var myNoun = "dog";
@@ -314,10 +327,10 @@ In order to get the last letter of a string, you can subtract one from the strin
 
 
 </code>
-</section> <!-- String Declaration close -->
-<section id="array"> <!-- Arrays section -->
 
-<h2> Arrays</h2>
+ <!-- Arrays section -->
+
+<h3> Arrays</h3>
 <p>Store Multiple Values in one Variable using JavaScript Arrays</p>
 <p>With JavaScript array variables, we can store several pieces of data in one place.</p>
 <code>
@@ -346,7 +359,7 @@ console.log(myData);
 </code>
 
 
-<p>Modify Array Data With Indexes</p>
+<h4>Modify Array Data With Indexes</h4>
 <p>Unlike strings, the entries of arrays are mutable and can be changed freely.</p>
 <code>
   var ourArray = [50,40,30];
@@ -361,7 +374,7 @@ myArray[0] = 45;
 console.log(myArray);
 </code>
 
-<p>Access Multi-Dimensional Arrays With Indexes</p>
+<h4>Access Multi-Dimensional Arrays With Indexes</h4>
 
 <code>
 Example
@@ -385,7 +398,7 @@ arr[3][0][1]; // equals 11
   console.log(myData);
 </code>
 
-<p>Manipulate Arrays With push()</p>
+<h4>Manipulate Arrays With push()</h4>
 <p>
   An easy way to append data to the end of an array is via the push() function.
 
@@ -409,7 +422,7 @@ arr[3][0][1]; // equals 11
   myArray.push(["dog",3]);
   console.log(myArray); [ [ 'John', 23 ], [ 'cat', 2 ], [ 'dog', 3 ] ]
 </code>
-<p> Manipulate Arrays With pop()</p>
+<h4> Manipulate Arrays With pop()</h4>
 <p>Another way to change the data in an array is with the .pop() function.
 
 .pop() is used to "pop" a value off of the end of an array. We can store this "popped off" value by assigning it to a variable. In other words, .pop() removes the last element from an array and returns that element.</p>
@@ -428,7 +441,7 @@ arr[3][0][1]; // equals 11
   console.log(myArray);
 </code>
 
-<p> Manipulate Arrays With shift()</p>
+<h4> Manipulate Arrays With shift()</h4>
 <p>pop() always removes the last element of an array. What if you want to remove the first?
 
 That's where .shift() comes in. It works just like .pop(), except it removes the first element instead of the last.  </p>
@@ -445,7 +458,7 @@ var removedFromOurArray = ourArray.shift();
   var removedFromMyArray = myArray.shift();
   console.log(removedFromMyArray);
 </code>
-<p>Manipulate Arrays With unshift()</p>
+<h4>Manipulate Arrays With unshift()</h4>
 <p>Not only can you shift elements off of the beginning of an array, you can also unshift elements to the beginning of an array i.e. add elements in front of the array.
 
 .unshift() works exactly like .push(), but instead of adding the element at the end of the array, unshift() adds the element at the beginning of the array.</p>
@@ -464,7 +477,7 @@ var removedFromOurArray = ourArray.shift();
  myArray.unshift(["Paul",35]);
 </code>
 
-<p>Shopping List</p>
+<h4>Shopping List</h4>
 <p>Challenge: Create a shopping list in the variable myList. The list should be a multi-dimensional array containing several sub-arrays.
 
 The first element in each sub-array should contain a string with the name of the item. The second element should be a number representing the quantity i.e.
@@ -478,9 +491,10 @@ There should be at least 5 sub-arrays in the list.</p>
   ["Biscuits", 20], ["lollipops", 5], ["jelly", 1]];
   console.log(myList);
 </code>
-</section> <!-- Arrays section Closed -->
-<section> <!-- functions -->
-<p>Write reusable javascript using functions. </p>
+ 
+ <!-- functions -->
+ <h3>Functions</h3>
+<h4>Write reusable javascript using functions. </h4>
 <p>In JavaScript, we can divide up our code into reusable parts called functions</p>
  <code>
    function functionName()
@@ -501,7 +515,7 @@ There should be at least 5 sub-arrays in the list.</p>
 
      </code>
 
-<p>Passing Values to Functions with Arguments</p>
+<h4>Passing Values to Functions with Arguments</h4>
 <p>Parameters are variables that act as placeholders for the values that are to be input to a function when it is called. When a function is defined, it is typically defined along with one or more parameters. The actual values that are input (or "passed") into a function when it is called are known as arguments.</p>
 <p>Challenge: Create a function called functionWithArgs that accepts two arguments and outputs their sum to the dev console.
 Call the function with two numbers as arguments.
@@ -515,7 +529,7 @@ Call the function with two numbers as arguments.
   functionWithArgs(10,10);
 </code>
 
-<p>Global scope and Functions </p>
+<h4>Global scope and Functions</h4>
 <p>In JavaScript, scope refers to the visibility of variables. Variables which are defined outside of a function block have Global scope. This means, they can be seen everywhere in your JavaScript code.</p>
 <p>Challenge: Using var, declare a global variable named myGlobal outside of any function. Initialize it with a value of 10.
 
@@ -545,7 +559,7 @@ Inside function fun1, assign 5 to oopsGlobal without using the var keyword.</p>
 </code>
 
 
-<p>Local Scope and Functions</p>
+<h4>Local Scope and Functions</h4>
 
 <p>
 Variables which are declared within a function, as well as the function parameters have local scope. That means, they are only visible within that function.
@@ -569,7 +583,7 @@ Variables which are declared within a function, as well as the function paramete
 
 
 </code>
- <p>Global vs. Local Scope in Functions</p>
+ <h4>Global vs. Local Scope in Functions</h4>
  <p>It is possible to have both local and global variables with the same name. When you do this, the local variable takes precedence over the global variable.</p>
 
 
@@ -587,7 +601,7 @@ Variables which are declared within a function, as well as the function paramete
 
   </code>
 
-<p>Return a Value from a Function with Return</p>
+<h4>Return a Value from a Function with Return</h4>
 <p>We can pass values into a function with arguments. You can use a return statement to send a value back out of a function.</p>
 <code>
   function plusThree(num)
@@ -606,7 +620,7 @@ Variables which are declared within a function, as well as the function paramete
   timesFive(5);
 </code>
 
-<p>Understanding Undefined Value returned from a Function</p>
+<h4>Understanding Undefined Value returned from a Function</h4>
 <p>A function can include the return statement but it does not have to. In the case that the function doesn't have a return statement, when you call it, the function processes the inner code but the returned value is undefined.</p>
 <code>
   var sum = 0;
@@ -652,7 +666,7 @@ Variables which are declared within a function, as well as the function paramete
   processed = processArg(7);
 </code>
 
-<h2>Challenge: Stand In Line</h2>
+<h4>Challenge: Stand In Line</h4>
 <p>In Computer Science a queue is an abstract Data Structure where items are kept in order. New items can be added at the back of the queue and old items are taken off from the front of the queue.
 
 Write a function nextInLine which takes an array (arr) and a number (item) as arguments.
@@ -675,9 +689,10 @@ The nextInLine function should then return the element that was removed.</p>
   console.log(nextInLine(testArr, 7));// arr -> testArr and 7 -> item to push
   console.log("After: " + JSON.stringify(testArr));
 </code>
-</section><!--functions closed-->
-<section id="ifelsecondition"><!--IF else Conditional statement-->
-<p> Understanding Boolean Values</p>
+
+<!--IF else Conditional statement-->
+<h3>Boolean and conditional statements</h3>
+<h4> Understanding Boolean Values</h4>
 <p>Another data type is the Boolean. Booleans may only be one of two values: true or false. They are basically little on-off switches, where true is "on" and false is "off." These two states are mutually exclusive</p>
 <p>Challenge: Modify the welcomeToBooleans function so that it returns true instead of false when the run button is clicked.</p>
 <code>
@@ -686,7 +701,7 @@ The nextInLine function should then return the element that was removed.</p>
    return true;
   }
 </code>
-<p> Use Conditional Logic with If Statements</p>
+<h4> Use Conditional Logic with If Statements</h4>
 <p>If statements are used to make decisions in code. The keyword if tells JavaScript to execute the code in the curly braces under certain conditions, defined in the parentheses. These conditions are known as Boolean conditions and they may only be true or false.
 
 When the condition evaluates to true, the program executes the statement inside the curly braces. When the Boolean condition evaluates to false, the statement inside the curly braces will not execute.</p>
@@ -702,7 +717,7 @@ When the condition evaluates to true, the program executes the statement inside 
   }
 </code>
 
-<p>Comparison with the Equality Operator</p>
+<h4>Comparison with the Equality Operator</h4>
 <p>There are many comparison operators in JavaScript. All of these operators return a boolean true or false value.
 
 The most basic operator is the equality operator ==. The equality operator compares two values and returns true if they're equivalent or false if they are not. Note that equality is different from assignment (=), which assigns the value on the right of the operator to a variable on the left.</p>
@@ -729,7 +744,7 @@ The most basic operator is the equality operator ==. The equality operator compa
 
 </code>
 
-<p>Comparison with the Strict Equality Operator</p>
+<h4>Comparison with the Strict Equality Operator</h4>
 <p>Strict equality (===) is the counterpart to the equality operator (==). However, unlike the equality operator, which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
 
 If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.</p>
@@ -750,7 +765,7 @@ If the values being compared have different types, they are considered unequal, 
 testStrict(10);
 </code>
 
-<p>Practice comparing different values</p>
+<h4>Practice comparing different values</h4>
 <code>
   function compareEquality(a, b) {
     if (a === b) { // Change this line
@@ -763,7 +778,7 @@ testStrict(10);
 
 </code>
 
-<p>Comparison with the Inequality Operator</p>
+<h4>Comparison with the Inequality Operator</h4>
 <p>The inequality operator (!=) is the opposite of the equality operator. It means "Not Equal" and returns false where equality would return true and vice versa. Like the equality operator, the inequality operator will convert data types of values while comparing.</p>
 <code>
   1 !=  2     // true
@@ -786,7 +801,7 @@ testStrict(10);
   testNotEqual(10);
 </code>
 
-<p>Comparison with the Strict Inequality Operator</p>
+<h4>Comparison with the Strict Inequality Operator</h4>
 <p>The strict inequality operator (!==) is the logical opposite of the strict equality operator. It means "Strictly Not Equal" and returns false where strict equality would return true and vice versa. Strict inequality will not convert data types.</p>
 <code>
   3 !==  3   // false
@@ -807,7 +822,7 @@ testStrict(10);
 
 </code>
 
-<p>Comparison with the Greater Than Operator Passed</p>
+<h4>Comparison with the Greater Than Operator Passed</h4>
 <p>The greater than operator (>) compares the values of two numbers. If the number to the left is greater than the number to the right, it returns true. Otherwise, it returns false.</p>
 <code>function testGreaterThan(val) {
   if (val > 100) {
@@ -821,9 +836,10 @@ testStrict(10);
   return "10 or Under";
 }
 
-testGreaterThan(10);</code>
+testGreaterThan(10);
+</code>
 
-<p>Comparison with the Greater Than Or Equal To OperatorPassed</p>
+<h4>Comparison with the Greater Than Or Equal To Operator</h4>
 <p>The greater than or equal to operator (>=) compares the values of two numbers. If the number to the left is greater than or equal to the number to the right, it returns true. Otherwise, it returns false.</p>
 <code>
 6   >=  6   // true
@@ -851,7 +867,7 @@ testGreaterThan(10);</code>
 
 </code>
 
-<p>Comparison with the Less Than Operator</p>
+<h4>Comparison with the Less Than Operator</h4>
 <p>The less than operator (<) compares the values of two numbers. If the number to the left is less than the number to the right, it returns true. Otherwise, it returns false. Like the equality operator, less than operator converts data types while comparing.</p>
 <code>
   2   < 5  // true
@@ -880,14 +896,14 @@ testGreaterThan(10);</code>
   testLessThan(10);
 </code>
 
-<p>Comparison with the Less Than Or Equal To Operator</p>
+<h4>Comparison with the Less Than Or Equal To Operator</h4>
 <p>The less than or equal to operator (<=) compares the values of two numbers. If the number to the left is less than or equal to the number to the right, it returns true. If the number on the left is greater than the number on the right, it returns false. Like the equality operator, less than or equal to converts data types.</p>
 <code>
   4   <= 5  // true
   '7' <= 7  // true
   5   <= 5  // true
   3   <= 2  // false
-  '8' <= 4  // false
+;  '8' <= 4  // false
 </code>
 
 <code>
@@ -907,7 +923,7 @@ testGreaterThan(10);</code>
 
 </code>
 
-<p>Comparisons with the Logical And Operator</p>
+<h4>Comparisons with the Logical And Operator</h4>
 <p>Sometimes you will need to test more than one thing at a time. The logical and operator (&&) returns true if and only if the operands to the left and right of it are true.  <br> Example code </p>
 <code>
   if (num>5 && num<10) {
@@ -937,7 +953,7 @@ testGreaterThan(10);</code>
 
    testLogicalAnd(10);
 </code>
-<p>Comparisons with the Logical Or Operator </p>
+<h4>Comparisons with the Logical Or Operator </h4>
 <p>The logical or operator (||) returns true if either of the operands is true. Otherwise, it returns false.
 The logical or operator is composed of two pipe symbols: (||). This can typically be found between your Backspace and Enter keys.</p>
 <p>Challenge: Combine the two if statements into one statement which returns "Outside" if val is not between 10 and 20, inclusive. Otherwise, return "Inside"</p>
@@ -955,7 +971,7 @@ The logical or operator is composed of two pipe symbols: (||). This can typicall
   testLogicalOr(15)
 
 </code>
-<p>Introducing Else Statements</p>
+<h4>Introducing Else Statements</h4>
 <p>When a condition for an if statement is true, the block of code following it is executed. What about when that condition is false? Normally nothing would happen. With an else statement, an alternate block of code can be executed.</p>
 <p>Challenge: Combine the if statements into a single if/else statement.</p>
 <code>
@@ -973,7 +989,7 @@ The logical or operator is composed of two pipe symbols: (||). This can typicall
 
 </code>
 
-<p>Introducing Else If Statements</p>
+<h4>Introducing Else If Statements</h4>
 <p>If you have multiple conditions that need to be addressed, you can chain if statements together with else if statements.</p>
 <code>
   if(num>15) {
@@ -987,7 +1003,7 @@ The logical or operator is composed of two pipe symbols: (||). This can typicall
 
 </code>
 
-<p>challenge: Convert the logic to use else if statements</p>
+<h4>challenge: Convert the logic to use else if statements</h4>
 <code>
   function testElseIf(val) {
     if (val>10) {
@@ -1007,7 +1023,7 @@ The logical or operator is composed of two pipe symbols: (||). This can typicall
 
 </code>
 
-<p>Logical Order in If Else Statements</p>
+<h4>Logical Order in If Else Statements</h4>
 <p>Order is important in if, else if statements.
 
 The function is executed from top to bottom so you will want to be careful of what statement comes first.
@@ -1015,9 +1031,9 @@ The function is executed from top to bottom so you will want to be careful of wh
 </p>
 <code>
   function orderMyLogic(val) {
-    if (val<5) {
+    if (val < 5) {
       return  "Less than 5";
-    } else if (val<10) {
+    } else if (val < 10) {
       return "Less than 10";
     } else {
       return "Greater than or equal to 10";
@@ -1029,7 +1045,7 @@ The function is executed from top to bottom so you will want to be careful of wh
   orderMyLogic(11);
 </code>
 
-<p>Chaining If Else Statements</p>
+<h4>Chaining If Else Statements</h4>
 <p>if/else statements can be chained together for complex logic. Here is pseudocode of multiple chained if / else if statements:</p>
 <code>
   if (condition1) {
@@ -1097,7 +1113,7 @@ num >= 20 - return "Huge"</p>
 
 
 </code>
-<p> Golf Code</p>
+<h4>Golf Code</h4>
 <p>In the game of golf each hole has a par meaning the average number of strokes a golfer is expected to make in order to sink the ball in a hole to complete the play. Depending on how far above or below par your strokes are, there is a different nickname.
 
 Your function will be passed par and strokes arguments. Return the correct string according to this table which lists the strokes in order of priority; top (highest) to bottom (lowest):</p>
@@ -1170,9 +1186,9 @@ par + 2	    "Double Bogey"
 
 
 </code>
-</section> <!--If else condition statement closed-->
 
-<p>Selecting from Many Options with Switch Statements</p>
+<h3>Switch Case</h3>
+<h4>Selecting from Many Options with Switch Statements</h4>
 <p>If you have many options to choose from, use a switch statement. A switch statement tests a value and can have many case statements which define various possible values. Statements are executed from the first matched case value until a break is encountered.
 
 Here is an example of a switch statement</p>
@@ -1221,7 +1237,7 @@ return answer;
   caseInSwitch(4);
 
 </code>
-<p>Adding a Default Option in Switch Statements</p>
+<h4>Adding a Default Option in Switch Statements</h4>
 <p>In a switch statement you may not be able to specify all possible values as case statements. Instead, you can add the default statement which will be executed if no matching case statements are found. Think of it like the final else statement in an if/else chain.</p>
 <code>
   switch (num) {
@@ -1274,7 +1290,7 @@ default - "stuff"</p>
 
 
 </code>
-<p>Multiple Identical Options in Switch Statements</p>
+<h4>Multiple Identical Options in Switch Statements</h4>
 <p>If the break statement is omitted from a switch statement's case, the following case statement(s) are executed until a break is encountered. If you have multiple inputs with the same output, you can represent them in a switch statement like</p>
 <code>
   switch(val) {
@@ -1334,7 +1350,7 @@ Challenge: Write a switch statement to set answer for the following ranges:
 
 
 </code>
-<p> Replacing If Else Chains with Switch</p>
+<h4> Replacing If Else Chains with Switch</h4> 
 <p>If you have many options to choose from, a switch statement can be easier to write than many chained if/else if statements. The following:</p>
 <code>
   if (val === 1) {
@@ -1393,7 +1409,7 @@ Challenge: Write a switch statement to set answer for the following ranges:
 
 </code>
 
-<p>Returning Boolean Values from Functions</p>
+<h4>Returning Boolean Values from Functions</h4>
 <p>You may recall from Comparison with the Equality Operator that all comparison operators return a boolean true or false value.</p>
 <p>Sometimes people use an if/else statement to do a comparison, like this:</p>
 <code>
@@ -1435,7 +1451,7 @@ Challenge: Write a switch statement to set answer for the following ranges:
 isLess(10, 15);
 </code>
 
-<p>Return Early Pattern for Functions</p>
+<h4>Return Early Pattern for Functions</h4>
   <p>When a return statement is reached, the execution of the current function stops and control returns to the calling location.The above outputs "Hello" to the console, returns "World", but "byebye" is never output, because the function exits at the return statement.</p>
   <code>
     function myFun()
@@ -1460,7 +1476,7 @@ isLess(10, 15);
  abTest(2,2);
 
   </code>
-  <p>Counting Cards</p>
+  <h4>Counting Cards</h4>
   <p>In the casino game Blackjack, a player can gain an advantage over the house by keeping track of the relative number of high and low cards remaining in the deck. This is called Card Counting.
 Having more high cards remaining in the deck favors the player. Each card is assigned a value according to the table below. When the count is positive, the player should bet high. When the count is zero or negative, the player should bet low.</p>
 <p>You will write a card counting function. It will receive a card parameter, which can be a number or a string, and increment or decrement the global count variable according to the card's value (see table). The function will then return a string with the current count and the string Bet if the count is positive, or Hold if the count is zero or negative. The current count and the player's decision (Bet or Hold) should be separated by a single space.</p>
@@ -1505,7 +1521,8 @@ Having more high cards remaining in the deck favors the player. Each card is ass
 
 
  </code>
- <p>Build JavaScript Objects</p>
+ <h3>Objects</h3>
+ <h4>Build JavaScript Objects</h4>
  <p>You may have heard the term object before.
 Objects are similar to arrays, except that instead of using indexes to access and modify their data, you access the data in objects through what are called properties.
 Objects are useful for storing data in a structured way, and can represent real world objects, like a cat.</p>
@@ -1578,7 +1595,7 @@ Here is a sample of using bracket notation to read an object's property:</p>
   var entreeValue = testObj["an entree"];
   var drinkValue = testObj["the drink"];
 </code>
-<p>Accessing Object Properties with Variables</p>
+<h4>Accessing Object Properties with Variables</h4>
 <p>Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
 
 Here is an example of using a variable to access a property:</p>
@@ -1591,7 +1608,7 @@ Here is an example of using a variable to access a property:</p>
   console.log(myBreed); // "Doberman"
 
 </code>
-<p>Accessing Object Properties with Variables</p>
+<h4>Accessing Object Properties with Variables</h4>
 <p>Another use of bracket notation on objects is to access a property which is stored as the value of a variable. This can be very useful for iterating through an object's properties or when accessing a lookup table.
 Here is an example of using a variable to access a property:</p>
 <code>
@@ -1626,7 +1643,7 @@ Here is an example of using a variable to access a property:</p>
   var player = testObj[playerNumber];
   console.log(player);
 </code>
-<p>Updating Object Properties</p>
+<h4>Updating Object Properties</h4>
 <p>After you've created a JavaScript object, you can update its properties at any time just like you would update any other variable. You can use either dot or bracket notation to update.</p>
 <p>For example, let's look at ourDog</p>
 <code>
@@ -1651,7 +1668,7 @@ Here is an example of using a variable to access a property:</p>
 
 </code>
 
-<p>Add New Properties to a JavaScript Object</p>
+<h4>Add New Properties to a JavaScript Object</h4>
 <p>You can add new properties to existing JavaScript objects the same way you would modify them.
 
 Here's how we would add a "bark" property to ourDog:
@@ -1689,7 +1706,7 @@ Now when we evaluate ourDog.bark, we'll get his bark, "bow-wow".</p>
 
 </code>
 
-<p>Delete Properties from a JavaScript Object</p>
+<h4>Delete Properties from a JavaScript Object</h4>
 
 <p>We can also delete properties from objects like this:
 
@@ -1718,7 +1735,7 @@ delete ourDog.bark;</p>
   console.log(myDog);
 
 </code>
-<p>Using Objects for Lookups</p>
+<h4>Using Objects for Lookups</h4>
 <p>Objects can be thought of as a key/value storage, like a dictionary. If you have tabular data, you can use an object to "lookup" values rather than a switch statement or an if/else chain. This is most useful when you know that your input data is limited to a certain range.</p>
 <p>Here is an example of a simple reverse alphabet lookup:</p>
 <code>
@@ -1760,7 +1777,7 @@ delete ourDog.bark;</p>
   phoneticLookupTesting Objects for Properties("charlie");
 </code>
 
-<p>Testing Objects for Properties</p>
+<h4>Testing Objects for Properties</h4>
 <p>Sometimes it is useful to check if the property of a given object exists or not. We can use the .hasOwnProperty(propname) method of objects to determine if that object has the given property name. .hasOwnProperty() returns true or false if the property is found or not.</p>
 <code>
   var myObj = {
@@ -1792,7 +1809,7 @@ delete ourDog.bark;</p>
 
 </code>
 
-<h3>Manipulating Complex Objects</h3>
+<h4>Manipulating Complex Objects</h4>
 <p>Sometimes you may want to store data in a flexible Data Structure. A JavaScript object is one way to handle flexible data. They allow for arbitrary combinations of strings, numbers, booleans, arrays, functions, and objects.
 
 Here's an example of a complex data structure</p>
@@ -1860,7 +1877,7 @@ Here's an example of a complex data structure</p>
   ];
 
 </code>
-<h3>Accessing Nested Objects</h3>
+<h4>Accessing Nested Objects</h4>
 <p>The sub-properties of objects can be accessed by chaining together the dot or bracket notation.</p>
 <code>
   var ourStorage = {
@@ -1896,7 +1913,7 @@ Here's an example of a complex data structure</p>
   var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
   console.log(gloveBoxContents);
 </code>
-<h3>Accessing Nested Arrays</h3>
+<h4>Accessing Nested Arrays</h4>
 <p>As we have seen in earlier examples, objects can contain both nested objects and nested arrays. Similar to accessing nested objects, Array bracket notation can be chained to access nested arrays.
 
 Here is an example of how to access a nested array:</p>
@@ -1951,7 +1968,7 @@ Here is an example of how to access a nested array:</p>
 </code>
 
 
-<h3>Record Collection</h3>
+<h4>Record Collection</h4>
 <p>You are given a JSON object representing a part of your musical album collection. Each album has a unique id number as its key and several other properties. Not all albums have complete information.
   
   You start with an updateRecords function that takes an object like collection, an id, a prop (like artist or tracks), and a value. Complete the function using the rules below to modify the object passed to the function.</p>
@@ -2024,8 +2041,8 @@ Here is an example of how to access a nested array:</p>
 
   </code>
   
-
-<h3> Iterate with JavaScript While Loop</h3>
+<h3>Loops</h3>
+<h4> Iterate with JavaScript While Loop</h4>
 <p>
   You can run the same code multiple times by using a loop.
 
@@ -2064,7 +2081,7 @@ The first type of loop we will learn is called a while loop because it runs "whi
 </code>
 
 
-<h3>Iterate with javascript For Loops</h3>
+<h4>Iterate with javascript For Loops</h4>
 <p>
   You can run the same code multiple times by using a loop.
 
@@ -2123,7 +2140,7 @@ In the following example we initialize with i = 0 and iterate while our conditio
       }
 
     </code>
-    <h3>Count backwards with a for loop</h3>
+    <h4>Count backwards with a for loop</h4>
     <p>A for loop can also count backwards, so long as we can define the right conditions.
 
       In order to count backwards by twos, we'll need to change our initialization, condition, and final-expression.
@@ -2153,7 +2170,7 @@ In the following example we initialize with i = 0 and iterate while our conditio
         output: [9,7,5,3,1] 
       </code>
 
-      <h3>Iterate Through an Array with a For Loop</h3>
+      <h4>Iterate Through an Array with a For Loop</h4>
       <p>A common task in JavaScript is to iterate through the contents of an array. One way to do that is with a for loop. This code will output each element of the array arr to the console:</p>
        <code>
         var arr = [10, 9, 8, 7, 6];
@@ -2178,7 +2195,7 @@ In the following example we initialize with i = 0 and iterate while our conditio
               }
 
             </code>
-            <h3>Nesting For Loops</h3>
+            <h4>Nesting For Loops</h4>
             <p>If you have a multi-dimensional array, you can use the same logic as the prior waypoint to loop through both the array and any sub-arrays. Here is an example</p>
              <code>
               var arr = [[1,2], [3,4], [5,6]];
@@ -2213,7 +2230,7 @@ In the following example we initialize with i = 0 and iterate while our conditio
               multiplyAll([[5,1],[0.2, 4, 0.5],[3, 9]]);
               
              </code>
-             <h3> Iterate with JavaScript Do...While Loops</h3>
+             <h4> Iterate with JavaScript Do...While Loops</h4>
              <p>The next type of loop you will learn is called a do...while loop. It is called a do...while loop because it will first do one pass of the code inside the loop no matter what, and then continue to run the loop while the specified condition evaluates to true.</p>
                 <code>
                   var ourArray = [];
@@ -2256,7 +2273,7 @@ In the following example we initialize with i = 0 and iterate while our conditio
                       console.log(i);
                     }while (i < 5);
                   </code>
-                  <h3>Replace loops using Recursion</h3>
+                  <h4>Replace loops using Recursion</h4>
                   <p>Recursion is the concept that a function can be expressed in terms of itself. To help understand this, start by thinking about the following task: multiply the first n elements of an array to create the product of those elements. Using a for loop, you could do this:</p>
                     <code>
                         function multiply(arr, n) {
@@ -2306,7 +2323,7 @@ In the following example we initialize with i = 0 and iterate while our conditio
           
         </code>    
         
-        <h3>Profile Lookup</h3>
+        <h4>Profile Lookup</h4>
         <p>We have an array of objects representing different people in our contacts lists.
 
           A lookUpProfile function that takes name and a property (prop) as arguments has been pre-written for you.
@@ -2422,7 +2439,7 @@ function randomFraction()
         }
       </code>
 
-      <h2>Use the parseInt Function</h2>
+      <h3>Use the parseInt Function</h3>
       <p>The parseInt() function parses a string and returns an integer.</p>
       <p>example: var a = parseInt("007");The above function converts the string "007" to an integer 7. If the first character in the string can't be converted into a number, then it returns NaN.</p>
   
@@ -2436,7 +2453,7 @@ function randomFraction()
        convertToInteger("56");
        </code>
 
-       <h2> Use the parseInt Function with a Radix</h2>
+       <h3> Use the parseInt Function with a Radix</h3>
        <p>The parseInt() function parses a string and returns an integer. It takes a second argument for the radix, which specifies the base of the number in the string. The radix can be an integer between 2 and 36.</p>
         <code>
           parseInt(string, radix);
@@ -2447,12 +2464,11 @@ function randomFraction()
             function convertToInteger(str) 
             {
             return parseInt(str,2);
-            }
-
+            }3
             convertToInteger("10011");
           </code>
 
-          <h2>Use the Conditional (Ternary) Operator </h2>
+          <h3>Use the Conditional (Ternary) Operator </h3>
           <p>The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
 
             The syntax is:
@@ -2485,7 +2501,7 @@ function randomFraction()
               checkEqual(1, 2);
              </code>
 
-             <h2>Use Multiple Conditional (Ternary) Operators</h2>
+             <h3>Use Multiple Conditional (Ternary) Operators</h3>
              <code>
               function findGreaterOrEqual(a, b) {
                 if (a === b) {
@@ -2515,14 +2531,15 @@ function randomFraction()
                {
                return (num>0) ? "positive" : (num<0) ? "negative" : "zero";
                }
-
-                checkSign(10);         
-                checkSign(-12);
+               checkSign(10);         
+               checkSign(-12);
             </code>
-            <h3>Use Recursion to Create a CountdownPassed</h3>
+            <h3>Use Recursion to Create a Countdown</h3>
+        </section>
+         
             
       
-          </section><!-- JavaScript_basics Section close-->
+          
 
 
 
