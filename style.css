@@ -118,33 +118,12 @@ img
 
 @media screen and (max-width: 600px)
 {
-  #maindoc,#javascript-basics
+  #maindoc
   {
-    width: 95%;
+    width: 98%;
     margin: auto;
     
   }
-
-  .top-list ul 
-  {
-    font-size: 1.5rem;
-    
-  }
-
-
-
-  #maindoc #javascript-basics h1, h2, h3, h4
-  {
-     font-size: 3rem;
-     margin:1rem;
-     
-  }
-
-  #maindoc p, code
-  {
-    font-size: 4rem;
-    margin: 1rem;
-    
-    
-  }
 }
+
+  
