@@ -127,6 +127,7 @@ img
   .top-list ul 
   {
     font-size: 1.5rem;
+    margin:1rem;
   }
 
 
@@ -134,10 +135,13 @@ img
   #maindoc #javascript-basics h1, h2, h3, h4
   {
      font-size: 2rem;
+     margin:1rem;
+     
   }
 
   #maindoc p, code
   {
     font-size: 2em;
+    margin:1rem;
   }
 }
