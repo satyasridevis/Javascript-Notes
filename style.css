@@ -116,11 +116,12 @@ img
 }
 
 
-@media (min-width:600px)
+@media screen and (max-width: 600px)
 {
-  #maindoc , #javascript-basics
+  #maindoc,#javascript-basics
   {
-    width: 100%;
+    width: 95%;
+    margin: auto;
     
   }
 
@@ -143,5 +144,6 @@ img
   {
     font-size: 2em;
     margin:1rem;
+    
   }
 }
