@@ -8,7 +8,7 @@
 
 header
 {
-  text-align: center;
+  
   width: 100%;
   height: 100px;
   padding: 2rem;
@@ -19,54 +19,79 @@ header h1
 {
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1.4px;
+  text-align: center;
+  
 }
 
-.top-list ul a
+.topic-list
+{
+  width: 100%;
+  height: auto;
+  
+  
+  
+}
+
+.topic-list ul a 
 {
   
   list-style: none;
   text-decoration: none;
   padding: 1rem;
-  color:black;
+  color:#333;
   text-decoration: underline;
- 
+  font-family: 'Roboto', sans-serif;
   
 }
 
-.top-list ul 
+
+.topic-list ul 
 { 
-  margin-left: 5rem;
   
-  width: 50%;
+  width: 100%;
   font-size: 1.2rem;
+  text-align: center;
 }
+
 
 
 #maindoc
 {
-  width: 95%;
+  width: 100%;
   height: 100%;
   margin: auto;
-
-  background: #fff;
-  font-family: Arial,x-locale-body,sans-serif;
-  
+  font-family: 'Roboto', sans-serif;
   
 }
-#maindoc h1, h2, h3, h4
+#maindoc h1, h3, h4
 {
   
   padding: 1.2rem;
   text-decoration: underline;
   font-family: 'Roboto', sans-serif;
-  letter-spacing: 1.4px;
+  letter-spacing: 1.5px;
   margin-left: 3.5rem;
   margin-right: 1rem;
 }
 
 #maindoc h2
 {
+  font-size: 2.1rem;
   text-align: center;
+  margin:0;
+  padding: 1.2rem;
+  text-decoration: underline;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1.5px;
+}
+#maindoc h3
+{
+  font-size: 1.7rem;
+}
+
+#maindoc h4
+{
+  font-size: 1.3rem;
 }
 
 
@@ -74,12 +99,14 @@ header h1
 #maindoc p
 {
   
-  font-size: 1rem;
+  font-size: 1.25rem;
   line-height: 1.6;
   font-weight: 200;
   text-align: justify;
   margin-left: 5rem;
-  margin-right: 15rem;
+  margin-right: 5rem;
+  letter-spacing: 1px;
+  
 }
 code
 {
@@ -89,20 +116,20 @@ code
   word-break: normal;
   word-wrap: normal;
   line-height: 2;
-  padding: 5px;
+  padding: 1rem;
   margin: 5rem;
-  background-color: #d0d0d5;
-  text-align: left;
-  font-size: 1.2rem;
-  width: 75%;
-
-
-
+  background-color: #111;
+  text-align:left;
+  font-size: 1.30rem;
+  width: 80%;
+  font-family: monospace;
+  color: #fff;
 }
 #maindoc #javascript-basics ul
 {
   margin-left: 6em;
   line-height: 2em;
+  font-size: 1.30rem;
 
 }
 span
@@ -115,23 +142,95 @@ img
   padding: 1rem
 }
 
+footer
+{
+  width: 100%;
+  height: 100px;
+  background-color: blueviolet;
+  position: relative;
+  bottom:0;
+  background-color: #0a0a23;
+  
+}
+
+footer p, a
+{
+  font-size: 1.1rem;
+  line-height: 1;
+  padding-top: 1rem;
+  color:#d0d0d5;
+  margin-left: 1rem;
+}
+
 
 @media screen and (max-width: 600px)
 {
   #maindoc
   {
-    width: 98%;
-    margin: auto;
-
+    width: 100%;
+    
     
   }
-  #maindoc p
+  #javascript-basics
   {
-    font-size: 3rem;
+    
+    width: 98%;
+    margin: auto;
   }
 
+  #maindoc h1, h3, h4
+  {
+    padding: 1rem;
+    text-decoration: underline;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    margin:0;
+    text-align: center;
+  }
 
+  #maindoc h3
+  {
+  font-size: 1.5rem;
+  }
 
+  #maindoc h4
+  {
+  font-size: 1.3rem;
+  }
+
+  #maindoc p
+  {
+  font-size: 1.15rem;
+  line-height: 1.4;
+  font-weight: 200;
+  text-align: justify;
+  margin: 1rem;
+  letter-spacing: 1px;
+  color:#333;
+ }
+
+ #maindoc #javascript-basics ul
+{
+  margin-left: 2em;
+  line-height: 2em;
+  font-size: 1.30rem;
+
+}
+
+code 
+{
+  width: 99%;
+  line-height: 2;
+  padding: 1rem;
+  margin: auto;
+  overflow-x: scroll;
+}
+
+img 
+{
+  width: 100%;
+  margin: auto;
+}
 
 }
 
