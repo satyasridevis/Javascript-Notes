@@ -1,4 +1,6 @@
-*
+
+
+  *
 {
   margin: 0;
   padding: 0;
@@ -99,7 +101,7 @@ header h1
 #maindoc p
 {
   
-  font-size: 1.25rem;
+  font-size: 1.20rem;
   line-height: 1.6;
   font-weight: 200;
   text-align: justify;
@@ -160,17 +162,33 @@ footer p, a
   padding-top: 1rem;
   color:#d0d0d5;
   margin-left: 1rem;
+
+  
 }
 
 
-@media screen and (max-width: 700px)
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
 {
+  header h1
+  {
+    font-size: 5.5rem;
+    
+  }
   #maindoc
   {
     width: 100%;
-    
-    
   }
+
+  .topic-list
+  {
+    padding-top: 3rem;
+  }
+  .topic-list ul a li
+  { 
+  font-size: 1.4em;
+  }
+
   #javascript-basics
   {
     
@@ -190,17 +208,17 @@ footer p, a
 
   #maindoc h3
   {
-  font-size: 1.5rem;
+  font-size: 3rem;
   }
 
   #maindoc h4
   {
-  font-size: 1.3rem;
+  font-size: 2.5rem;
   }
 
   #maindoc p
   {
-  font-size: 1.15rem;
+  font-size: 2.3rem;
   line-height: 1.4;
   font-weight: 200;
   text-align: justify;
@@ -224,6 +242,7 @@ code
   padding: 1rem;
   margin: auto;
   overflow-x: scroll;
+  font-size: 2.5rem;
 }
 
 img 
@@ -232,6 +251,7 @@ img
   margin: auto;
 }
 
+
 }
 
-  
+
