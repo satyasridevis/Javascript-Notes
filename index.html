@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Notes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -12,7 +13,7 @@
     
     
 <header><h1>JAVASCRIPT NOTES</h1></header>
-<div class="topic-list">
+<nav class="topic-list">
   <ul>
     <a href="#javascript-basics"><li>Javascript Basics</li></a>
     <a href=""><li>ES6 Features</li></a> 
@@ -25,12 +26,12 @@
     <a href=""><li>Intermiate Algorithm scripting</li></a>
     <a href=""><li></li></a>
   </ul>
-</div>
+</nav>
     
   <section id="maindoc">
     
         <section id="javascript-basics">
-          <h2> Javascript Basics</h2>
+          <h1> Javascript Basics</h1>
          <p>JavaScript is a high-level programming language that all modern web browsers support. It is also one of the core technologies of the web
          JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles.</p>
 
@@ -39,7 +40,7 @@
 
           <!-- comment your JavaScript  code-->
   
-         <h3>Comment your Javascript Code</h3>
+         <h2>Comment your Javascript Code</h2>
 
         <p> There are two ways to write comments in JavaScript</p>
         <code>// - single line comment</code>
@@ -50,7 +51,7 @@
       
   
 <!-- Declaring JavaScript variables -->
-
+    <h2>variables and Datatypes</h2>
     <h3>Declare JavaScript Variables </h3>
     <p> Number of datatypes :</p>
         <ul>
@@ -118,15 +119,18 @@
 
 <p>Usage
 In mathematics, a number can be checked to be even or odd by checking the remainder of the division of the number by 2.</p>
-<code>17 % 2 = 1 (17 is Odd)
-48 % 2 = 0 (48 is Even)</code>
+<code>
+17 % 2 = 1 (17 is Odd)
+48 % 2 = 0 (48 is Even)
+</code>
 
 <p> Set remainder equal to the remainder of 11 divided by 3 using the remainder (%) operator.</p>
 <code>
 var remainder;
 remainder= 11 % 3;
-console.log(remainder);</code>
-<p> Compound Assignment With Augmented Addition, subtraction, multiplication and division</p>
+console.log(remainder);
+</code>
+<h3> Compound Assignment With Augmented Addition, subtraction, multiplication and division</h3>
 <code>
 var a = 11;
 var b = 9;
@@ -141,8 +145,10 @@ d /=29; // Augmented division
 
 <!-- Strings Declaration -->
 
-<h3> Strings </h3>
-<code> var myName = "your name";</code>
+<h2> Strings </h2>
+<code> 
+  var myName = "your name";
+</code>
 <p> "your name" is called a string literal</p>
 
 <p>Create two new string variables: myFirstName and myLastName and assign them the values of your first and last name, respectively.</p>
@@ -158,26 +164,25 @@ d /=29; // Augmented division
 
 </code>
 
-<p>Escaping Literal Quotes in Strings
-When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: " or ' inside of your string?
-you can escape a quote from considering it as an end of string quote by placing a backslash (\) in front of the quote.
-
+<h3> Escaping Literal Quotes in Strings</h3>
+<p>
+  When you are defining a string you must start and end with a single or double quote. What happens when you need a literal quote: " or ' inside of your string?
+  you can escape a quote from considering it as an end of string quote by placing a backslash (\) in front of the quote.
 </p>
+
+
 <code>
 var sampleStr = "Alan said, \"Peter is learning JavaScript\".";
-
 </code>
 <p>Use backslashes to assign a string to the myStr variable so that if you were to print it to the console, you would see:
 
-<br>I am a "double quoted" string inside "double quotes".
-
-</p>
+<br>I am a "double quoted" string inside "double quotes".</p>
 
 <code>
 var myStr = "I am a \"double quoted\" string inside \"double quotes\".";
 </code>
-<p>Quoting Strings with Single Quotes
-single and double quotes work the same in JavaScript</p>
+<h3>Quoting Strings with Single Quotes</h3>
+<p>Single and double quotes work the same in JavaScript</p>
 <code>
   doubleQuoteStr = "This is a string";
   singleQuoteStr = 'This is also a string';
@@ -190,13 +195,13 @@ single and double quotes work the same in JavaScript</p>
   <img src="./img/strings js.jpeg">
 </picture>
 
-<p>Concatenating Strings with Plus Operator
-Build myStr from the strings "This is the start. " and "This is the end." using the + operator.
-</p>
+<h3>Concatenating Strings with Plus Operator</h3> 
+<p>Build myStr from the strings "This is the start. " and "This is the end." using the + operator</p>
+
 <code>
 var myStr="This is the start. " + "This is the end.";// This is the start. This is the end.
 </code>
-<h4>Concatenating Strings with the Plus Equals Operator</h4>
+<h3>Concatenating Strings with the Plus Equals Operator</h3>
 
 <code>
   var ourStr = "I come first. ";
@@ -204,7 +209,7 @@ var myStr="This is the start. " + "This is the end.";// This is the start. This 
   // ourStr is now "I come first. I come second."
 </code>
 
-<h4>Constructing Strings with Variables</h4>
+<h3>Constructing Strings with Variables</h3>
 <code>
   var ourName = "freeCodeCamp";
   var ourStr = "Hello, our name is " + ourName + ", how are you?";
@@ -220,7 +225,7 @@ Set myName to a string equal to your name and build myStr with myName between th
   var myStr = "My name is " + myName + " and I am well!";
   // My name is satya sridevi and I am well!
 </code>
-<h4>Appending Variables to Strings</h4>
+<h3>Appending Variables to Strings</h3>
 <code>
   var anAdjective = "awesome!";
   var ourStr = "freeCodeCamp is ";
@@ -228,16 +233,16 @@ Set myName to a string equal to your name and build myStr with myName between th
   // ourStr is now "freeCodeCamp is awesome!"
 </code>
 
-<h4>Challenge: Set someAdjective and append it to myStr using the += operator</h4>
+<h3>Challenge: Set someAdjective and append it to myStr using the += operator</h3>
 <code>
   var someAdjective ="awesome";
   var myStr = "Learning to code is ";
   myStr += someAdjective;//Learning to code is awesome
 </code>
 
-<p>Find the Length of a String <br>
-You can find the length of a String value by writing .length</p>
-<p> Challenge: Use the .length property to count the number of characters in the lastName variable and assign it to lastNameLength.</p>
+<h3>Find the Length of a String </h3>
+<p>You can find the length of a String value by (.length)</p> 
+<p> Challenge: Use the (.length) property to count the number of characters in the lastName variable and assign it to lastNameLength</p>
 <code>
   var lastNameLength;
   var lastName = "Lovelace";
@@ -333,7 +338,7 @@ In order to get the last letter of a string, you can subtract one from the strin
 
  <!-- Arrays section -->
 
-<h3> Arrays</h3>
+<h2> Arrays</h2>
 <p>Store Multiple Values in one Variable using JavaScript Arrays</p>
 <p>With JavaScript array variables, we can store several pieces of data in one place.</p>
 <code>

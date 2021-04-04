@@ -65,15 +65,16 @@ header h1
   font-family: 'Roboto', sans-serif;
   
 }
-#maindoc h1, h3, h4
+#maindoc h1, h2, h3, h4
 {
   
-  padding: 1.2rem;
+  padding: 1rem;
   text-decoration: underline;
   font-family: 'Roboto', sans-serif;
   letter-spacing: 1.5px;
   margin-left: 3.5rem;
   margin-right: 1rem;
+  text-align: center;
 }
 
 #maindoc h2
@@ -136,12 +137,15 @@ code
 }
 span
 {
-  background: yellow;
+  background: #d0d0d5;
 }
 img
 {
   margin-left: 4rem;
-  padding: 1rem
+  padding: 1rem;
+  width:60%;
+  height: auto;
+
 }
 
 footer
@@ -168,11 +172,13 @@ footer p, a
 
 
 
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px)
+@media screen and (max-width : 600px)
 {
   header h1
   {
-    font-size: 5.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    width: 100%;
     
   }
   #maindoc
@@ -182,11 +188,13 @@ footer p, a
 
   .topic-list
   {
-    padding-top: 3rem;
+    width: 100%;
+    background: pink;
   }
   .topic-list ul a li
   { 
-  font-size: 1.4em;
+  font-size: 1.1rem;
+  text-align: center;
   }
 
   #javascript-basics
@@ -196,34 +204,51 @@ footer p, a
     margin: auto;
   }
 
-  #maindoc h1, h3, h4
+  #maindoc h1, h2, h3, h4
   {
     padding: 1rem;
     text-decoration: underline;
     font-family: 'Roboto', sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
     margin:0;
     text-align: center;
   }
 
+  #maindoc h1
+  {
+    font-size: 1.6rem;
+    background-color: #d0d0d5;
+    border: 1px solid#111;
+  }
+
+  #maindoc h2
+  {
+  font-size: 1.4rem;
+  text-decoration: none;
+  
+  
+  
+  }
+
   #maindoc h3
   {
-  font-size: 3rem;
+    font-size: 1.2rem;
   }
 
   #maindoc h4
   {
-  font-size: 2.5rem;
+  font-size: 1rem;
   }
 
   #maindoc p
   {
-  font-size: 2.3rem;
+  font-size: 1rem;
   line-height: 1.4;
-  font-weight: 200;
+  font-family: Lato,sans-serif;
   text-align: justify;
   margin: 1rem;
   letter-spacing: 1px;
+  text-align: left;
   color:#333;
  }
 
@@ -237,18 +262,27 @@ footer p, a
 
 code 
 {
-  width: 99%;
+  width: 98%;
   line-height: 2;
   padding: 1rem;
   margin: auto;
   overflow-x: scroll;
-  font-size: 2.5rem;
+  font-size: 1.2rem;
 }
 
 img 
 {
   width: 100%;
   margin: auto;
+}
+
+#maindoc #javascript-basics ul li
+{
+  margin-left: 2em;
+  line-height: 2em;
+  font-size: .7rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 
