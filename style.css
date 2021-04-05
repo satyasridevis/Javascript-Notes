@@ -62,7 +62,7 @@ header h1
   width: 100%;
   height: 100%;
   margin: auto;
-  font-family: 'Roboto', sans-serif;
+  
   
 }
 #maindoc h1, h2, h3, h4
@@ -75,16 +75,17 @@ header h1
   margin-left: 3.5rem;
   margin-right: 1rem;
   text-align: center;
+  color: #323a45;
 }
 
 #maindoc h2
 {
-  font-size: 2.1rem;
+  font-size: 1rem;
   text-align: center;
   margin:0;
   padding: 1.2rem;
   text-decoration: underline;
-  font-family: 'Roboto', sans-serif;
+  font-family: Lato, sans-serif;
   letter-spacing: 1.5px;
 }
 #maindoc h3
@@ -102,13 +103,16 @@ header h1
 #maindoc p
 {
   
-  font-size: 1.20rem;
+  font-size: 1.1rem;
   line-height: 1.6;
-  font-weight: 200;
+  font-weight: 400;
   text-align: justify;
   margin-left: 5rem;
   margin-right: 5rem;
   letter-spacing: 1px;
+  font-family: 'Lato', sans-serif;
+  color: #112e51;
+  
   
 }
 code
@@ -139,13 +143,27 @@ span
 {
   background: #d0d0d5;
 }
+ figure
+ {
+   
+   border: 2px solid #0a0a23;
+   margin:1rem;
+  }
+
+
 img
 {
   margin-left: 4rem;
   padding: 1rem;
-  width:60%;
-  height: auto;
+  width:500px;
+  height:auto;
+}
 
+figcaption p
+{
+  position:relative;
+  bottom:1rem;
+  margin: auto;
 }
 
 footer
@@ -156,7 +174,6 @@ footer
   position: relative;
   bottom:0;
   background-color: #0a0a23;
-  
 }
 
 footer p, a
@@ -166,8 +183,6 @@ footer p, a
   padding-top: 1rem;
   color:#d0d0d5;
   margin-left: 1rem;
-
-  
 }
 
 
@@ -179,7 +194,6 @@ footer p, a
     font-size: 1.8rem;
     text-align: center;
     width: 100%;
-    
   }
   #maindoc
   {
@@ -212,6 +226,7 @@ footer p, a
     letter-spacing: 1.5px;
     margin:0;
     text-align: center;
+    color:#112e51;
   }
 
   #maindoc h1
@@ -249,7 +264,7 @@ footer p, a
   margin: 1rem;
   letter-spacing: 1px;
   text-align: left;
-  color:#333;
+
  }
 
  #maindoc #javascript-basics ul
@@ -257,6 +272,8 @@ footer p, a
   margin-left: 2em;
   line-height: 2em;
   font-size: 1.30rem;
+  font-family: Lato,sans-serif;
+  color:#112e51;
 
 }
 
@@ -268,11 +285,13 @@ code
   margin: auto;
   overflow-x: scroll;
   font-size: 1.2rem;
+  text-align: left;
 }
 
 img 
 {
   width: 100%;
+  height: auto;
   margin: auto;
 }
 
