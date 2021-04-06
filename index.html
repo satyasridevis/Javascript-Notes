@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript Notes</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
 <nav class="topic-list">
   <ul>
     <a href="#javascript-basics"><li>Javascript Basics</li></a>
-    <a href=""><li>ES6 Features</li></a> 
+    <a href="#ecmascriptsix"><li>ES6 Features</li></a> 
     <a href=""><li>Regular Expressions</li></a> 
     <a href=""><li>Debugging</li></a>
     <a href=""><li>Basic Data Structures</li></a>
@@ -2452,10 +2452,369 @@ The syntax is:condition ? expression-if-true : expression-if-false;</p>
   checkSign(-12);
 </code>
        
-  <h2>Use Recursion to Create a Countdown</h2>
-        </section>
-         
-            
+ <h2>Use Recursion to Create a Countdown</h2>
+ <p>In a previous challenge, you learned how to use recursion to replace a for loop. Now, let's look at a more complex function that returns an array of consecutive integers starting with 1 through the number passed to the function.</p>
+ <p>As mentioned in the previous challenge, there will be a base case. The base case tells the recursive function when it no longer needs to call itself. It is a simple case where the return value is already known. There will also be a recursive call which executes the original function with different arguments. If the function is written correctly, eventually the base case will be reached.</p>
+ <p>For example, say you want to write a recursive function that returns an array containing the numbers 1 through n. This function will need to accept an argument, n, representing the final number. Then it will need to call itself with progressively smaller values of n until it reaches 1. You could write the function as follows:</p>  
+<code>
+  function countup(n) {
+    if (n < 1) {
+      return [];
+    } else {
+      const countArray = countup(n - 1);
+      countArray.push(n);
+      return countArray;
+    }
+  }
+  console.log(countup(5));  
+</code>
+
+<p>The value [1, 2, 3, 4, 5] will be displayed in the console.</p>
+<p>At first, this seems counterintuitive since the value of n decreases, but the values in the final array are increasing. This happens because the push happens last, after the recursive call has returned. At the point where n is pushed into the array, countup(n - 1) has already been evaluated and returned [1, 2, ..., n - 1].</p>     
+<p>CHALLENGE: We have defined a function called countdown with one parameter (n). The function should use recursion to return an array containing the integers n through 1 based on the n parameter. If the function is called with a number less than 1, the function should return an empty array. For example, calling this function with n = 5 should return the array [5, 4, 3, 2, 1]. Your function must use recursion by calling itself and must not use loops of any kind.</p>       
+<h2>
+  Use Recursion to Create a Range of NumbersPassed
+</h2>    
+
+<p>Continuing from the previous challenge, we provide you another opportunity to create a recursive function to solve a problem</p>
+<p>CHALLENGE: We have defined a function named rangeOfNumbers with two parameters. The function should return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both startNum and endNum are the same.</p>
+</section>
+
+<!--ES6 features section-->
+<section id="ecmascriptsix">
+  <h1>ES6 Features</h1>
+  <h2>Explore Differences Between the var and let Keywords</h2>
+  <p>One of the biggest problems with declaring variables with the var keyword is that you can overwrite variable declarations without an error.</p>
+  <code>
+var camper = 'James';
+var camper = 'David';
+console.log(camper);
+  </code>
+  <p>Here the console will display the string David.</p>
+  <p>As you can see in the code above, the camper variable is originally declared as James and then overridden to be David. In a small application, you might not run into this type of problem, but when your code becomes larger, you might accidentally overwrite a variable that you did not intend to overwrite. Because this behavior does not throw an error, searching and fixing bugs becomes more difficult.</p>
+  <p>A new keyword called let was introduced in ES6 to solve this potential issue with the var keyword. If you were to replace var with let in the variable declarations of the code above, the result would be an error.</p>
+  <code>
+    let camper = 'James';
+    let camper = 'David';
+  </code>
+  <p>
+    This error can be seen in the console of your browser. So unlike var, when using let, a variable with the same name can only be declared once. Note the "use strict". This enables Strict Mode, which catches common coding mistakes and "unsafe" actions
+  </p>
+  <p>For instance:</p>
+  <code>
+  "use strict";
+   x = 3.14;
+  </code>
+  <p>This will display an error that <span>x is not defined.</span></p>
+  <p>CHALLENGE:Update the code so it only uses the <span>let</span> keyword.</p>
+  <code>
+    let catName;
+    let quote;
+    function catTalk() 
+    {
+   "use strict";
+    catName = "Oliver";
+    quote = catName + " says Meow!";
+    console.log(quote);
+   }
+    catTalk();
+  </code>
+  <h2>Compare Scopes of the <span>var</span> and <span>let</span> Keywords</h2>
+  <p>When you declare a variable with the var keyword, it is declared globally, or locally if declared inside a function.</p>
+  <p>The let keyword behaves similarly, but with some extra features. When you declare a variable with the let keyword inside a block, statement, or expression, its scope is limited to that block, statement, or expression.</p>
+  <p>For Example:</p>
+  <code>
+  var numArray = [];
+  for (var i = 0; i < 3; i++) 
+  {
+      numArray.push(i);
+  }
+  console.log(numArray);
+  console.log(i);
+  // Here the console will display the values [0, 1, 2] and 3.
+  </code>
+  
+  <p>With the var keyword, i is declared globally. So when i++ is executed, it updates the global variable. This code is similar to the following:</p>
+  <code>
+    var numArray = [];
+    var i;
+    for (i = 0; i < 3; i++) 
+    {
+      numArray.push(i);
+    }
+    console.log(numArray);
+    console.log(i);
+    // Here the console will display the values [0, 1, 2] and 3
+  </code>
+  
+  <p>This behavior will cause problems if you were to create a function and store it for later use inside a for loop that uses the i variable. This is because the stored function will always refer to the value of the updated global i variable.</p>
+<code>
+  var printNumTwo;
+  for (var i = 0; i < 3; i++) 
+  {
+  if (i === 2) 
+  {
+    printNumTwo = function() 
+    {
+    return i;
+    };
+  }
+ }
+console.log(printNumTwo());
+// Here the console will display the value 3.
+</code>
+<p>As you can see, printNumTwo() prints 3 and not 2. This is because the value assigned to i was updated and the printNumTwo() returns the global i and not the value i had when the function was created in the for loop. The let keyword does not follow this behavior:</p>
+<code>
+let printNumTwo;
+for (let i = 0; i < 3; i++) 
+{
+  if (i === 2) 
+  {
+    printNumTwo = function() 
+    {
+      return i;
+    };
+  }
+}
+console.log(printNumTwo());
+console.log(i);
+// Here the console will display the value 2, and an error that i is not defined
+</code>
+<p>i is not defined because it was not declared in the global scope. It is only declared within the for loop statement. printNumTwo() returned the correct value because three different i variables with unique values (0, 1, and 2) were created by the let keyword within the loop statement.</p>
+<p>CHALLENGE EXERCISES: Fix the code so that i declared in the if statement is a separate variable than i declared in the first line of the function. Be certain not to use the var keyword anywhere in your code.</p>
+<p>This exercise is designed to illustrate the difference between how var and let keywords assign scope to the declared variable. When programming a function similar to the one used in this exercise, it is often better to use different variable names to avoid confusion.</p>
+<code>
+  function checkScope() 
+  {
+    let i = 'function scope';
+    if (true) 
+    {
+      let i = 'block scope';
+      console.log('Block scope i is: ', i);
+    }
+    console.log('Function scope i is: ', i);
+    return i;
+  }
+  checkScope();
+  // Block scope i is:  block scope
+  // Function scope i is:  function scope
+</code>
+<h2>Declare a Read-Only Variable with the <span>const</span>  Keyword</h2>
+<p>The keyword let is not the only new way to declare variables. In ES6, you can also declare variables using the const keyword.</p>
+<p>const has all the awesome features that let has, with the added bonus that variables declared using const are read-only. They are a constant value, which means that once a variable is assigned with const, it cannot be reassigned.</p>
+<code>
+const FAV_PET = "Cats";
+FAV_PET = "Dogs";
+//The console will display an error due to reassigning the value of FAV_PET
+</code>
+<p>As you can see, trying to reassign a variable declared with const will throw an error. You should always name variables you don't want to reassign using the const keyword. This helps when you accidentally attempt to reassign a variable that is meant to stay constant. A common practice when naming constants is to use all uppercase letters, with words separated by an underscore.</p>
+<p>Note: It is common for developers to use uppercase variable identifiers for immutable values and lowercase or camelCase for mutable values (objects and arrays). In a later challenge you will see an example of a lowercase variable identifier being used for an array.</p>
+<p>CHALLENGE: Change the code so that all variables are declared using let or const. Use let when you want the variable to change, and const when you want the variable to remain constant. Also, rename variables declared with const to conform to common practices, meaning constants should be in all caps.</p>
+<code>
+  function printManyTimes(str) 
+  {
+    const SENTENCE = str + " is cool!";
+    for (let i = 0; i < str.length; i+=2) 
+    {
+      console.log(SENTENCE);
+    }
+  }
+  printManyTimes("freeCodeCamp");
+</code>
+<h2>Mutate an Array Declared with const</h2>
+<p>The const declaration has many use cases in modern JavaScript.</p>
+<p>Some developers prefer to assign all their variables using const by default, unless they know they will need to reassign the value. Only in that case, they use let.
+However, it is important to understand that objects (including arrays and functions) assigned to a variable using const are still mutable. Using the const declaration only prevents reassignment of the variable identifier.</p>
+<code>
+const s = [5, 6, 7];
+s = [1, 2, 3];
+s[2] = 45;
+console.log(s);
+// s = [1, 2, 3] will result in an error
+// The console.log will display the value [5, 6, 45].
+</code>
+<p>As you can see, you can mutate the object [5, 6, 7] itself and the variable s will still point to the altered array [5, 6, 45]. Like all arrays, the array elements in s are mutable, but because const was used, you cannot use the variable identifier s to point to a different array using the assignment operator.</p>
+<p>CHALLENGE EXERCISE: An array is declared as const s = [5, 7, 2]. Change the array to [2, 5, 7] using various element assignments</p>
+<code>
+  const s = [5, 7, 2];
+  function editInPlace() 
+  {
+    s[0] = 2;
+    s[1] = 5;
+    s[2] = 7;
+    // Using s = [2, 5, 7] would be invalid
+  }
+  editInPlace();
+</code>
+<h2>Prevent Object Mutation</h2>
+<p>As seen in the previous challenge, const declaration alone doesn't really protect your data from mutation. To ensure your data doesn't change, JavaScript provides a function <span>Object.freeze</span> to prevent data mutation.</p>
+<p>Once the object is frozen, you can no longer add, update, or delete properties from it. Any attempt at changing the object will be rejected without an error.</p>
+<code>
+  let obj = 
+  {
+    name:"FreeCodeCamp",
+    review:"Awesome"
+  };
+  Object.freeze(obj);
+  obj.review = "bad";
+  obj.newProp = "Test";
+  console.log(obj); 
+  // The obj.review and obj.newProp assignments will result in errors,
+  // the console will display the value { name: "FreeCodeCamp", review: "Awesome" }.
+</code>
+<p>CHALLENGE EXERCISE: In this challenge you are going to use <span>object.freeze</span> to prevent mathematical constants from changing. You need to freeze the <span>MATH_CONSTANTS </span>object so that no one is able to alter the value of PI, add, or delete properties.</p>
+<code>
+  function freezeObj() 
+  {
+    const MATH_CONSTANTS = 
+    {
+      PI: 3.14
+    };
+    Object.freeze(MATH_CONSTANTS);
+    try {
+      MATH_CONSTANTS.PI = 99;
+    } catch(ex) {
+      console.log(ex);
+    }
+    return MATH_CONSTANTS.PI;
+  }
+  const PI = freezeObj();
+</code>
+<h2>Use <span>Arrow Functions </span>to Write Concise Anonymous Functions</h2>
+<p>In JavaScript, we often don't need to name our functions, especially when passing a function as an argument to another function. Instead, we create inline functions. We don't need to name these functions because we do not reuse them anywhere else.</p>
+<p>To achieve this, we often use the following syntax:</p>
+<code>
+  const myFunc = function() 
+  {
+    const myVar = "value";
+    return myVar;
+  }
+</code>
+<p>ES6 provides us with the syntactic sugar to not have to write anonymous functions this way. Instead, you can use arrow function syntax:</p>
+<code>
+  const myFunc = () => 
+  {
+    const myVar = "value";
+    return myVar;
+  }
+</code>
+<p>When there is no function body, and only a return value, arrow function syntax allows you to omit the keyword return as well as the brackets surrounding the code.</p>
+<p>This helps simplify smaller functions into one-line statements:</p>
+<code>
+  const myFunc = () => "value";
+  // This code will still return the string <span>value </span>by default.
+</code>
+<p>CHALLENGE EXERCISE: Rewrite the function assigned to the variable magic which returns a new Date() to use arrow function syntax. Also, make sure nothing is defined using the keyword var.</p>
+<code>
+  //Before
+  var magic = function() {
+    return new Date();
+  };
+</code>
+<code>
+  //after
+  const magic = () => new Date();
+</code>
+<h2>Write Arrow Functions with Parameters</h2>
+<p>Just like a regular function, you can pass arguments into an arrow function.</p>
+<code>
+const doubler = (item) => item * 2;
+doubler(4);
+// doubler(4) would return the value 8.
+</code>
+<p>If an arrow function has a single parameter, the parentheses enclosing the parameter may be omitted.</p>
+<code>
+  const doubler = item => item * 2;
+</code>
+<p>It is possible to pass more than one argument into an arrow function.</p>
+<code>
+const multiplier = (item, multi) => item * multi;
+multiplier(4, 2);
+// multiplier(4, 2) would return the value 8.
+</code>
+<p>CHALLENGE EXERCISE: Rewrite the myConcat function which appends contents of arr2 to arr1 so that the function uses arrow function syntax.</p>
+<code>
+  //before
+  var myConcat = function(arr1, arr2) 
+  {
+    return arr1.concat(arr2);
+  };
+  console.log(myConcat([1, 2], [3, 4, 5]));
+</code>
+<code>
+  //after
+  const myConcat = (arr1, arr2) => arr1.concat(arr2);
+  console.log(myConcat([1, 2], [3, 4, 5]));
+  // Output : [ 1, 2, 3, 4, 5 ]
+</code>
+<h2>Set Default Parameters for Your Functions</h2>
+<p>In order to help us create more flexible functions, ES6 introduces default parameters for functions.</p>
+<p>Check out this code:</p>
+<code>
+const greeting = (name = "Anonymous") => "Hello " + name;
+console.log(greeting("John"));
+console.log(greeting());
+// The console will display the strings Hello John and Hello Anonymous.
+</code>
+<p>The default parameter kicks in when the argument is not specified (it is undefined). As you can see in the example above, the parameter name will receive its default value Anonymous when you do not provide a value for the parameter. You can add default values for as many parameters as you want.</p>
+<p>CHALLENGE EXERCISE: Modify the function increment by adding default parameters so that it will add 1 to number if value is not specified.</p>
+<code>
+// Before 
+const increment = (number, value) => number + value;
+// After 
+const increment = (number, value = 1) => number + value;
+console.log(increment(4));
+console.log(increment(4,3));
+</code>
+<h2>Use the Rest Parameter with Function Parameters</h2>
+<p>In order to help us create more flexible functions, ES6 introduces the rest parameter for function parameters. With the rest parameter, you can create functions that take a variable number of arguments. These arguments are stored in an array that can be accessed later from inside the function.</p>
+<p>Rest parameter example: (...args) and (...n) </p>
+<p>Check out this code:</p>
+<code>
+function howMany(...args) 
+{
+  return "You have passed " + args.length + " arguments.";
+}
+console.log(howMany(0, 1, 2));
+console.log(howMany("string", null, [1, 2, 3], { }));
+// You have passed 3 arguments.
+// You have passed 4 arguments.
+</code>
+<p>The rest parameter eliminates the need to check the args array and allows us to apply <span>map(), filter() and reduce() </span>on the parameters array.</p>
+<p>CHALLENGE EXERCISE: Modify the function sum using the rest parameter in such a way that the function sum is able to take any number of arguments and return their sum.</p>
+<code>
+// Before
+const sum = (x, y, z) => 
+{
+const args = [x, y, z];
+return args.reduce((a, b) => a + b, 0);
+}
+// After
+const sum = (...args) => 
+{
+ return args.reduce((a, b) => a + b,0);
+}
+console.log(sum(1,2,3));
+console.log(sum(1,2,3,4));
+console.log(sum());
+</code>
+<p>HINT</p>
+<code>
+const product = (n1, n2, n3) => 
+{
+ const args = [n1, n2, n3];
+ return args.reduce((a, b) => a * b, 1);
+}
+console.log(product(2, 4, 6)); //48
+// This can be written as 
+const product = (...n) => 
+{
+  return n.reduce((a, b) => a * b, 1);
+}
+console.log(product(2, 4, 6)); //48
+</code>
+</section>
+
       
           
 

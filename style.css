@@ -79,9 +79,16 @@ header h1
   color: #323a45;
 }
 
+#maindoc h1
+{
+  font-size: 2.1rem;
+  background-color: #d0d0d5;
+  border: 1px solid #0a0a23;
+}
+
 #maindoc h2
 {
-  font-size: 1rem;
+  font-size: 1.9rem;
   text-align: center;
   margin:0;
   padding: 1.2rem;
@@ -91,7 +98,7 @@ header h1
 }
 #maindoc h3
 {
-  font-size: 1.7rem;
+  font-size: 1.1rem;
   text-decoration: underline;
 }
 
@@ -126,7 +133,8 @@ code
   word-wrap: normal;
   line-height: 2;
   padding: 1rem;
-  margin: 5rem;
+  margin-left:5rem;
+  margin-top: 1rem;
   background-color: #111;
   text-align:left;
   font-size: 1.30rem;
@@ -175,7 +183,13 @@ footer
   background-color: blueviolet;
   position: relative;
   bottom:0;
+  top: 10px;
   background-color: #0a0a23;
+}
+
+#ecmascriptsix
+{
+  padding-top: 2rem;
 }
 
 footer p, a
@@ -291,7 +305,10 @@ code
   width: 98%;
   line-height: 2;
   padding: 1rem;
-  margin: auto;
+  margin-top:10px;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
   overflow-x: scroll;
   font-size: 1.2rem;
   text-align: left;
@@ -311,6 +328,13 @@ img
   font-size: .7rem;
   font-family: Georgia, 'Times New Roman', Times, serif;
 
+}
+
+footer 
+{
+  position: relative;
+  bottom:0;
+  top: 20px;
 }
 
 
