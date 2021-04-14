@@ -10,8 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     
+    
   </head>
-  <body>
+  <body onload="loader()">
+    <div id="loader"></div>
     
     
 <header><h1>JAVASCRIPT NOTES</h1></header>
@@ -2813,7 +2815,140 @@ const product = (...n) =>
 }
 console.log(product(2, 4, 6)); //48
 </code>
+<h2>Use the Spread Operator to Evaluate Arrays In-Place</h2>
+<p>ES6 introduces the spread operator, which allows us to expand arrays and other expressions in places <span>where multiple parameters or elements are expected</span> .</p>
+<p>The ES5 code below uses <span>apply()</span>to compute the maximum value in an array:</p>
+<code>
+var arr = [6, 89, 3, 45];
+var maximus = Math.max.apply(null, arr);
+// maximus would have a value of 89.
+</code>
+<p>We had to use <span>Math.max.apply(null, arr) </span>because Math.max(arr) returns NaN. Math.max() expects comma-separated arguments, but not an array. The spread operator makes this syntax much better to read and maintain.</p>
+<code>
+const arr = [6, 89, 3, 45];
+const maximus = Math.max(...arr);
+// maximus would have a value of 89.
+</code>
+<p>...arr returns an unpacked array. In other words, it spreads the array. However, the spread operator only works in-place, like in an argument to a function or in an array literal. The following code will not work:</p>
+<code>
+  const spreaded = ...arr;
+</code>
+<p>CHALLENGE EXERCISE: Copy all contents of arr1 into another array arr2 using the spread operator.</p>
+<code>
+// Before
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+arr2 = [];  
+console.log(arr2);
+//After 
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+arr2 = [...arr1]; 
+console.log(arr2);
+</code>
+<h2>Use Destructuring Assignment to Extract Values from Objects</h2>
+<p>Destructuring assignment is special syntax introduced in ES6, for neatly assigning values taken directly from an object.</p>
+<p>Consider the following ES5 code:</p>
+<code>
+const user = { name: 'John Doe', age: 34 };
+const name = user.name;
+const age = user.age;
+// name would have a value of the string John Doe, and age would have the number 34.
+</code>
+<p>Here's an equivalent assignment statement using the ES6 destructuring syntax:</p>
+<code>
+  const { name, age } = user;
+</code>
+<p>Again, name would have a value of the string John Doe, and age would have the number 34.</p>
+<p>Here, the name and age variables will be created and assigned the values of their respective values from the user object. You can see how much cleaner this is.</p>
+<p>You can extract as many or few values from the object as you want.</p>
+<p>CHALLENGE EXERCISE: Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables today and tomorrow the values of today and tomorrow from the HIGH_TEMPERATURES object.</p>
+<code>
+  // Before
+  const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };
+  const today = HIGH_TEMPERATURES.today;
+  const tomorrow = HIGH_TEMPERATURES.tomorrow;
+  //After
+  const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };
+  const {today, tomorrow} = HIGH_TEMPERATURES;
+</code>
+<h2>Use Destructuring Assignment to Assign Variables from Objects</h2>
+<p>Destructuring allows you to assign a new variable name when extracting values. You can do this by putting the new name after a colon when assigning the value.</p>
+<p>Using the same object from the last example:</p>
+<code>const user = { name: 'John Doe', age: 34 };</code>
+<p>Here's how you can give new variable names in the assignment:</p>
+<code>const { name: userName, age: userAge } = user;</code>
+<p>You may read it as "get the value of <span>user.name</span> and assign it to a new variable named userName" and so on. The value of userName would be the string John Doe, and the value of userAge would be the number 34.</p>
+<p>CHALLENGE EXERCISE: Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables highToday and highTomorrow the values of today and tomorrow from the HIGH_TEMPERATURES object.</p>
+<code>
+  const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+  };
+  const {today: highToday, tomorrow: highTomorrow} = HIGH_TEMPERATURES;
+</code>
+<h2>Use Destructuring Assignment to Assign Variables from Nested Objects</h2>
+<p>You can use the same principles from the previous two lessons to destructure values from nested objects.</p>
+<p>Using an object similar to previous examples:</p>
+<code>
+  const user = {
+    johnDoe: { 
+      age: 34,
+      email: 'johnDoe@freeCodeCamp.com'
+    }
+  };
+</code>
+<p>Here's how to extract the values of object properties and assign them to variables with the same name:</p>
+<code>const { johnDoe: { age, email }} = user;</code>
+<p>And here's how you can assign an object properties' values to variables with different names:</p>
+<code>const { johnDoe: { age: userAge, email: userEmail }} = user;</code>
+<p>CHALLENGE EXERCISE: Replace the two assignments with an equivalent destructuring assignment. It should still assign the variables lowToday and highToday the values of today.low and today.high from the LOCAL_FORECAST object.</p>
+<code>
+  // Before
+  const LOCAL_FORECAST = {
+    yesterday: { low: 61, high: 75 },
+    today: { low: 64, high: 77 },
+    tomorrow: { low: 68, high: 80 }
+  };
+  const lowToday = LOCAL_FORECAST.today.low;
+  const highToday = LOCAL_FORECAST.today.high;
+  // After
+  const LOCAL_FORECAST = {
+    yesterday: { low: 61, high: 75 },
+    today: { low: 64, high: 77 },
+    tomorrow: { low: 68, high: 80 }
+  };
+  const {today :{low: lowToday, high: highToday}} = LOCAL_FORECAST;
+</code>
+<h2>Use Destructuring Assignment to Assign Variables from Arrays</h2>
+<p>ES6 makes destructuring arrays as easy as destructuring objects.</p>
+<p>One key difference between the spread operator and array destructuring is that the spread operator unpacks all contents of an array into a comma-separated list. Consequently, you cannot pick or choose which elements you want to assign to variables.</p>
+<p>Destructuring an array lets us do exactly that:</p>
+<code>
+const [a, b] = [1, 2, 3, 4, 5, 6];
+console.log(a, b);
+// The console will display the values of a and b as 1, 2.
+</code>
+<p>The variable a is assigned the first value of the array, and b is assigned the second value of the array. We can also access the value at any index in an array with destructuring by using commas to reach the desired index:</p>
+<code>
+const [a, b,,, c] = [1, 2, 3, 4, 5, 6];
+console.log(a, b, c);
+// The console will display the values of a, b, and c as 1, 2, 5.
+</code>
+<p>CHALLENGE EXERCISE: Use destructuring assignment to swap the values of a and b so that a receives the value stored in b, and b receives the value stored in a.</p>
+
 </section>
+
+
 
       
           
@@ -2831,7 +2966,7 @@ console.log(product(2, 4, 6)); //48
     
 </footer>
 
-
+<script src="loader.js"></script>
 
   </body>
 </html>
