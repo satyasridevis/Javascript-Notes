@@ -175,12 +175,6 @@ a {
   }
 }
 
-.challengelinks {
-  color: #112e51;
-  padding-top: 10px;
-  border: 1px solid #black;
-}
-
 @media screen and (max-width: 600px) {
   header {
     background-color: #0a0a23;
